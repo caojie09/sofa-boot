@@ -14,15 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.alipay.sofa.runtime.spi.spring;
+package com.alipay.sofa.healthcheck.base;
 
-import com.alipay.sofa.runtime.spi.component.SofaRuntimeContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Interface used to implemented by a Spring bean who want to get an instance of {@link SofaRuntimeContext}.
- *
- * @author xuanbei 18/3/1
+ * @author qilong.zql
+ * @since 2.5.0
  */
-public interface SofaRuntimeContextAware {
-    void setSofaRuntimeContext(SofaRuntimeContext sofaRuntimeContext);
+@SpringBootApplication
+public class SofaBootTestApplication {
+    public static void main(String[] args) {
+        SpringApplication springApplication = new SpringApplication(SofaBootTestApplication.class);
+        springApplication.run(args);
+    }
 }
